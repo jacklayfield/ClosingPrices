@@ -9,7 +9,8 @@ import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 
 #Grab stock quote
-sq = web.DataReader('AAPL', data_source='yahoo', start='2012-01-01', end='2019-12-17')
+sq = web.DataReader('AAPL', data_source='yahoo', start='2012-01-01', end='2022-1-17')
+# sq = web.DataReader('AAPL', data_source='yahoo', start='2012-01-01', end='2019-12-17')
 print(sq)
 
 plt.figure(figsize=(16,8))
@@ -17,7 +18,7 @@ plt.title('Closing price data')
 plt.plot(sq['Close'])
 plt.xlabel('Date', fontsize=14)
 plt.ylabel('Close Price (USD $)', fontsize=14)
-plt.show()
+# plt.show()
 
 #Create dataframe for close column
 data = sq.filter(['Close'])
@@ -31,12 +32,10 @@ print(training_data_len)
 scaler = MinMaxScaler(feature_range=(0,1))
 scaled_data = scaler.fit_transform(dataset)
 
-scaled_data
-
 #Create the training data set
 #Create the scaled training data set
 train_data = scaled_data[0:training_data_len , :]
-#Split data into x_traina nd y_train sets
+#Split data into x_train and y_train sets
 x_train = []
 y_train = []
 
@@ -46,7 +45,9 @@ for i in range(60, len(train_data)):
 
   if i<=61:
     print(x_train)
+    print("XXXXXXXX3\n\n\n\n\n\n\n\n")
     print(y_train)
+    print("XXXXXXXX4\n\n\n\n\n\n\n\n")
     print()
 
 #Convert the x_train and y_train to numpy arrays
@@ -73,7 +74,11 @@ model.fit(x_train, y_train, batch_size=1, epochs=1)
 
 #Create the testing data set
 #Scaled values from 1543-2003
-test_data = scaled_data[training_data_len -60: 2003, :]
+# print(len(dataset))s
+test_data = scaled_data[training_data_len -60: len(dataset), :]
+print(test_data)
+print(len(test_data))
+print("XXXXXXXX1\n\n\n\n\n\n\n\n")
 #Create the data sets x_test and y_test
 x_test = []
 y_test = dataset[training_data_len:, :]
@@ -82,6 +87,8 @@ for i in range(60, len(test_data)):
 
   #Convert to numpy/reshape
 x_test = np.array(x_test)
+print(x_test)
+print("XXXXXXXX\n\n\n\n\n\n\n\n")
 x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
 
 #Get models predicted price vals
