@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 
 #Grab stock quote
-sq = web.DataReader('AAPL', data_source='yahoo', start='2012-01-01', end='2022-1-17')
+sq = web.DataReader('MSFT', data_source='yahoo', start='2017-01-01', end='2022-1-17')
 # sq = web.DataReader('AAPL', data_source='yahoo', start='2012-01-01', end='2019-12-17')
 print(sq)
 
@@ -45,9 +45,7 @@ for i in range(60, len(train_data)):
 
   if i<=61:
     print(x_train)
-    print("XXXXXXXX3\n\n\n\n\n\n\n\n")
     print(y_train)
-    print("XXXXXXXX4\n\n\n\n\n\n\n\n")
     print()
 
 #Convert the x_train and y_train to numpy arrays
@@ -78,7 +76,6 @@ model.fit(x_train, y_train, batch_size=1, epochs=1)
 test_data = scaled_data[training_data_len -60: len(dataset), :]
 print(test_data)
 print(len(test_data))
-print("XXXXXXXX1\n\n\n\n\n\n\n\n")
 #Create the data sets x_test and y_test
 x_test = []
 y_test = dataset[training_data_len:, :]
@@ -88,7 +85,6 @@ for i in range(60, len(test_data)):
   #Convert to numpy/reshape
 x_test = np.array(x_test)
 print(x_test)
-print("XXXXXXXX\n\n\n\n\n\n\n\n")
 x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
 
 #Get models predicted price vals
