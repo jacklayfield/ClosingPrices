@@ -15,3 +15,5 @@ pip install tensorflow <br />
 
 Todo: <br />
 Export to python module to allow for more heavy duty usage and additional functionality. <br />
+Add simple UI to use module <br />
+Better plotting <br />
