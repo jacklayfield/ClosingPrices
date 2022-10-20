@@ -1,23 +1,23 @@
-from PySide6.QtWidgets import QApplication, QMainWindow
-from PySide6.QtUiTools import QUiLoader
+import sys
+
+from PySide6 import QtWidgets
+# from PySide2 import QtWidgets
+# from PyQt5 import QtWidgets
+# from PyQt6 import QtWidgets
+
 from qt_material import apply_stylesheet
 
+# create the application and the main window
+app = QtWidgets.QApplication(sys.argv)
+window = QtWidgets.QMainWindow()
 
-########################################################################
-class ShowUI(QMainWindow):
-    # ----------------------------------------------------------------------
-    def __init__(self):
-        """"""
-        super().__init__()
-        self.main = QUiLoader().load('window.ui', self)
+# setup stylesheet
+apply_stylesheet(app, theme='dark_teal.xml')
 
+# run
+window.show()
 
-if __name__ == "__main__":
-    app = QApplication()
-
-    apply_stylesheet(app, theme='dark_cyan.xml')
-
-    frame = ShowUI()
-    frame.main.show()
-
+if hasattr(app, 'exec'):
+    app.exec()
+else:
     app.exec_()
