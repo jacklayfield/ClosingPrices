@@ -1,18 +1,16 @@
 import sys
-import os
+from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtUiTools import QUiLoader
+from qt_material import apply_stylesheet
 
-# IMPORT MODULES
-from PySide6.QtGui import QGuiApplication
-from PySide6.QtQml import QQmlApplicationEngine
 
-# INSTACE CLASS
-if __name__ == "__main__":
-    app = QGuiApplication(sys.argv)
-    engine = QQmlApplicationEngine()
-    # Load QML File
-    engine.load(os.path.join(os.path.dirname(__file__), "qml/main.qml"))
+########################################################################
 
-    # Check Exit App
-    if not engine.rootObjects():
-        sys.exit(-1)
-    sys.exit(app.exec_())
+app = QApplication()
+
+apply_stylesheet(app, theme='dark_cyan.xml')
+
+frame = QUiLoader().load('window.ui')
+frame.show()
+
+app.exec()
