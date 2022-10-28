@@ -6,11 +6,17 @@ from qt_material import apply_stylesheet
 
 ########################################################################
 
-app = QApplication()
 
-apply_stylesheet(app, theme='dark_cyan.xml')
+def main():
+    app = QApplication()
 
-frame = QUiLoader().load('window.ui')
-frame.show()
+    apply_stylesheet(app, theme='dark_purple.xml')
 
-app.exec()
+    frame = QUiLoader().load('window.ui')
+    frame.show()
+
+    app.exec()
+
+
+if __name__ == "__main__":
+    main()
