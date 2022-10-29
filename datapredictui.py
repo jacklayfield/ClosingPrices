@@ -1,22 +1,27 @@
+from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.uic import loadUi
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow
-from PySide6.QtUiTools import QUiLoader
-from qt_material import apply_stylesheet
+
+# import the themes
+from qt_material import *
 
 
-########################################################################
+class MainUI(QMainWindow):
+    def __init__(self):
+        super(MainUI, self).__init__()
 
+        loadUi("window.ui", self)
 
-def main():
-    app = QApplication()
+        self.pushButton.clicked.connect(self.generate_models)
 
-    apply_stylesheet(app, theme='dark_purple.xml')
+        apply_stylesheet(app, theme='dark_purple.xml')
 
-    frame = QUiLoader().load('window.ui')
-    frame.show()
-
-    app.exec()
+    def generate_models(self):
+        print("Epic model")
 
 
 if __name__ == "__main__":
-    main()
+    app = QApplication(sys.argv)
+    ui = MainUI()
+    ui.show()
+    app.exec_()
