@@ -77,9 +77,9 @@
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>150</y>
-       <width>161</width>
+       <x>320</x>
+       <y>280</y>
+       <width>160</width>
        <height>41</height>
       </rect>
      </property>
@@ -87,25 +87,12 @@
       <string>Generate Models</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>386</y>
-       <width>101</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>RadioButton</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>140</y>
-       <width>221</width>
+       <x>376</x>
+       <y>120</y>
+       <width>48</width>
        <height>30</height>
       </rect>
      </property>
@@ -119,19 +106,19 @@
     <widget class="QDateEdit" name="lineEdit">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>170</y>
+       <x>300</x>
+       <y>150</y>
        <width>200</width>
-       <height>20</height>
+       <height>30</height>
       </rect>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>200</y>
-       <width>221</width>
+       <x>378</x>
+       <y>180</y>
+       <width>44</width>
        <height>30</height>
       </rect>
      </property>
@@ -145,10 +132,10 @@
     <widget class="QDateEdit" name="lineEdit">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>230</y>
+       <x>300</x>
+       <y>210</y>
        <width>200</width>
-       <height>20</height>
+       <height>30</height>
       </rect>
      </property>
     </widget>
