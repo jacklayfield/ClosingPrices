@@ -17,3 +17,6 @@ Todo: <br />
 Export to python module to allow for more heavy duty usage and additional functionality. <br />
 Add simple UI to use module <br />
 Better plotting <br />
+
+Note: Using python 3.10 <br />
+Also note: must have PyQt5, qt-material to run ui <br />
