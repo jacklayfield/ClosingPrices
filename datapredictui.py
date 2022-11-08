@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.uic import loadUi
 import sys
+import datapredict
 
 # import the themes
 from qt_material import *
@@ -18,6 +19,7 @@ class MainUI(QMainWindow):
 
     def generate_models(self):
         print("Epic model")
+        datapredict.generate()
 
 
 if __name__ == "__main__":
