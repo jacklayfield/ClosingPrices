@@ -42,6 +42,11 @@ class MainUI(QMainWindow):
         month = ymd[1].strip()
         day = ymd[2].strip()
 
+        if int(month) < 10 : month = "0" + str(month)
+        if int(day) < 10 : day = "0" + str(day)
+
+        print(month, day)
+
         print("year = " + year + " month = " + month + " day = " + day)
 
         self.startDate = str(year) + "-" + str(month) + "-" + str(day)
@@ -61,6 +66,9 @@ class MainUI(QMainWindow):
         year = ymd[0].strip()
         month = ymd[1].strip()
         day = ymd[2].strip()
+
+        if int(month) < 10 : month = "0" + str(month)
+        if int(day) < 10 : day = "0" + str(day)
 
         print("year = " + year + " month = " + month + " day = " + day)
 
