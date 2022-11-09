@@ -103,7 +103,7 @@
       <string>Start Date</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="lineEdit">
+    <widget class="QDateEdit" name="dateStart">
      <property name="geometry">
       <rect>
        <x>300</x>
@@ -129,7 +129,7 @@
       <string>End Date</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="lineEdit">
+    <widget class="QDateEdit" name="dateEnd">
      <property name="geometry">
       <rect>
        <x>300</x>

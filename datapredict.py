@@ -9,10 +9,10 @@ import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 
 
-def generate():
+def generate(startDate, endDate):
   #Grab stock quote
-  sq = web.DataReader('MSFT', data_source='yahoo', start='2017-01-01', end='2022-1-17')
-  # sq = web.DataReader('AAPL', data_source='yahoo', start='2012-01-01', end='2019-12-17')
+  sq = web.DataReader('MSFT', data_source='yahoo', start=startDate, end=endDate)
+  # sq = web.DataReader('AAPL', data_source='yahoo', start='2017-01-01', end='2022-01-17')
   print(sq)
 
   plt.figure(figsize=(16,8))
