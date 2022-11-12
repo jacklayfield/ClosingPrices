@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.uic import loadUi
 import sys
-import datapredict
+# import datapredict
 
 # import the themes
 from qt_material import *
@@ -23,11 +23,11 @@ class MainUI(QMainWindow):
         self.startDate = ""
         self.endDate = ""
 
-        apply_stylesheet(app, theme='dark_purple.xml')
+        apply_stylesheet(app, theme='light_blue.xml')
 
     def generate_models(self):
         print("Epic model")
-        datapredict.generate(self.startDate, self.endDate)
+        # datapredict.generate(self.startDate, self.endDate)
     
     def test(self):
         value = self.dateStart.date()
