@@ -12,9 +12,17 @@ plt.style.use('fivethirtyeight')
 def generate(startDate, endDate, stock):
   #Grab stock quote
   print(stock + " " + startDate + " " + endDate)
-  # sq = web.DataReader(stock, data_source='yahoo', start=startDate, end=endDate)
-  sq = web.DataReader('MSFT', data_source='yahoo', start='2017-01-01', end='2022-01-17')
-  print(sq)
+  
+  # Default stock quote 
+  sq = web.DataReader('AAPL', data_source='yahoo', start='2013-01-01', end='2019-01-17')
+
+  # Use a try catch block for quicker error checking
+  try:
+    sq = web.DataReader(stock, data_source='yahoo', start=startDate, end=endDate)
+    # print(sq)
+  except:
+    print("error occured while getting stock quote")
+    return "er_sq"
 
   plt.figure(figsize=(16,8))
   plt.title('Closing price data')
@@ -136,3 +144,5 @@ def generate(startDate, endDate, stock):
   #Quote on specific day
   apple_quote_day = web.DataReader('AAPL', data_source='yahoo', start='2019-12-18', end='2019-12-18')
   print(apple_quote_day['Close'])
+
+  return "success"

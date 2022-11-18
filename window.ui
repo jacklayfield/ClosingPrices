@@ -178,37 +178,21 @@
    </property>
    <widget class="QMenu" name="menuSelect_Theme">
     <property name="title">
-     <string>Select Theme</string>
+     <string>Theme</string>
     </property>
-    <addaction name="actionDark_red"/>
-    <addaction name="actionDark_blue"/>
-    <addaction name="actionLight_Yellow"/>
+    <addaction name="lightMode"/>
+    <addaction name="darkMode"/>
    </widget>
    <addaction name="menuSelect_Theme"/>
   </widget>
-  <action name="actiondark_amber">
+  <action name="lightMode">
    <property name="text">
-    <string>dark_amber</string>
+    <string>Light</string>
    </property>
   </action>
-  <action name="actiondark_blue">
+  <action name="darkMode">
    <property name="text">
-    <string>dark_blue</string>
-   </property>
-  </action>
-  <action name="actionDark_red">
-   <property name="text">
-    <string>Dark_red</string>
-   </property>
-  </action>
-  <action name="actionDark_blue">
-   <property name="text">
-    <string>Dark_blue</string>
-   </property>
-  </action>
-  <action name="actionLight_Yellow">
-   <property name="text">
-    <string>Light_Yellow</string>
+    <string>Dark</string>
    </property>
   </action>
  </widget>
