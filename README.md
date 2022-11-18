@@ -1,6 +1,9 @@
 # PredictiveAnalysisML <br />
 Using artificial recurrent neural network, LSTM, to predict closing prices <br />
 
+Announcements:
+Initial version to be released soon (basic functionality)
+
 Notes: In order to run, you must execute the updates seen under the imported libraries and restart runtime: <br />
 !pip install --upgrade pandas-datareader <br />
 !pip install --upgrade pandas <br />
@@ -15,8 +18,9 @@ pip install tensorflow <br />
 
 Todo: <br />
 Export to python module to allow for more heavy duty usage and additional functionality. <br />
-Add simple UI to use module <br />
+Add simple UI to use module DONE <br />
 Better plotting <br />
+Improved error handling (Before release) <br />
 
 Note: Using python 3.10 <br />
 Also note: must have PyQt5, qt-material to run ui <br />
