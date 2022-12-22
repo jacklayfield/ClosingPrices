@@ -17,8 +17,6 @@ pip install tensorflow <br />
 (Note, tensorflow may have trouble donwloading on certain machines due to LongPath errors, this can be updated in registry) <br />
 
 Todo: <br />
-Export to python module to allow for more heavy duty usage and additional functionality. <br />
-Add simple UI to use module DONE <br />
 Better plotting <br />
 Improved error handling (Before release) <br />
 
