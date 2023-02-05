@@ -1,5 +1,5 @@
 # PredictiveAnalysisML <br />
-#Demo: https://youtu.be/dL5xT6uxCWs
+# Demo: https://youtu.be/dL5xT6uxCWs
 Using artificial recurrent neural network, LSTM, to predict closing prices <br />
 
 Announcements:
