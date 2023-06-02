@@ -2,7 +2,22 @@
 # Demo: https://youtu.be/dL5xT6uxCWs
 Using artificial recurrent neural network, LSTM, to predict closing prices <br />
 
-Announcements:
+
+### Brief Overview:
+
+#### Here you will find two major jupyter notebooks:
+- datapredict.ipynb  <br />
+- datapredict_gru.ipynb <br />
+
+These files are where models are developed and tested. The first uses LSTM and the second uses GRU with several convolutions.  <br />
+
+#### You will also find two major Python files:
+- datapredict.py  <br /> 
+- datapredictui.py  <br />
+
+These files are where the UI and it's associated code are stored. Code that is developed and tested in the Jupyter notebook(s) is/are ported over to 'datapredict.py' for use.  <br />
+
+### Announcements:
 Initial version to be released soon (basic functionality)
 
 Notes: In order to run, you must execute the updates seen under the imported libraries and restart runtime: <br />
