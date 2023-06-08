@@ -14,15 +14,16 @@ def generate(startDate, endDate, stock):
   print(stock + " " + startDate + " " + endDate)
   
   # Default stock quote 
-  sq = web.DataReader('AAPL', data_source='yahoo', start='2013-01-01', end='2019-01-17')
+  # sq = web.DataReader('AAPL', data_source='yahoo', start='2013-01-01', end='2019-01-17')
 
   # Use a try catch block for quicker error checking
   try:
-    sq = web.DataReader(stock, data_source='yahoo', start=startDate, end=endDate)
-    # print(sq)
+    sq = web.DataReader(stock, data_source='stooq', start=startDate, end=endDate)
   except:
     print("error occured while getting stock quote")
     return "er_sq"
+
+  sq = sq.reindex(index=sq.index[::-1])
 
   plt.figure(figsize=(16,8))
   plt.title('Closing price data')
@@ -79,7 +80,7 @@ def generate(startDate, endDate, stock):
   model.compile(optimizer='adam', loss='mean_squared_error')
 
   #Train model
-  model.fit(x_train, y_train, batch_size=1, epochs=1)
+  model.fit(x_train, y_train, batch_size=4, epochs=3)
 
   #Create the testing data set
   #Scaled values from 1543-2003
@@ -123,26 +124,27 @@ def generate(startDate, endDate, stock):
   #Show the valid and predicted prices
   print(valid)
 
+  ## Get the predictions up through the current date:
   #Quote/DF
-  apple_quote = web.DataReader('AAPL', data_source='yahoo', start='2012-01-01', end='2019-12-17')
-  new_df = apple_quote.filter(['Close'])
-  last_60_days = new_df[-60:].values
-  #Scale data (0-1)
-  last_60_days_scaled = scaler.transform(last_60_days)
+  # apple_quote = web.DataReader('AAPL', data_source='yahoo', start='2012-01-01', end='2019-12-17')
+  # new_df = apple_quote.filter(['Close'])
+  # last_60_days = new_df[-60:].values
+  # #Scale data (0-1)
+  # last_60_days_scaled = scaler.transform(last_60_days)
 
-  #List of scaled data + reshape
-  X_test = []
-  X_test.append(last_60_days_scaled)
-  X_test = np.array(X_test)
-  X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
+  # #List of scaled data + reshape
+  # X_test = []
+  # X_test.append(last_60_days_scaled)
+  # X_test = np.array(X_test)
+  # X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
 
-  #Undo scaling
-  pred_price = model.predict(X_test)
-  pred_price = scaler.inverse_transform(pred_price)
-  print(pred_price)
+  # #Undo scaling
+  # pred_price = model.predict(X_test)
+  # pred_price = scaler.inverse_transform(pred_price)
+  # print(pred_price)
 
-  #Quote on specific day
-  apple_quote_day = web.DataReader('AAPL', data_source='yahoo', start='2019-12-18', end='2019-12-18')
-  print(apple_quote_day['Close'])
+  # #Quote on specific day
+  # apple_quote_day = web.DataReader('AAPL', data_source='yahoo', start='2019-12-18', end='2019-12-18')
+  # print(apple_quote_day['Close'])
 
   return "success"
